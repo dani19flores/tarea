@@ -1,0 +1,72 @@
+.search-page {
+    padding: 20px 40px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.loading,
+.error {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.release-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.release-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.release-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.release-info {
+    padding: 10px 15px;
+}
+
+.release-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.release-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.details-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #4b6cb7;
+    transition: color 0.2s;
+}
+
+.details-link:hover {
+    color: #182848;
+}
