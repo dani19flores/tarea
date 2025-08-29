@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
+import "./css/SongDetail.css";
 
 interface ReleaseDetails {
     id: string;
@@ -51,14 +52,23 @@ function SongDetail() {
     if (!data) return <p>No se encontraron detalles</p>;
 
     return (
-        <div>
-        <h2>{data.title}</h2>
-        <p>👤 Artista: {data["artist-credit"][0]?.name}</p>
-        <p>📅 Lanzamiento: {data.date}</p>
-        <p>🌍 País: {data.country}</p>
-        <p>💽 Formato: {data.media?.map((m) => m.format).join(", ")}</p>
-        <p>🎶 Canciones: {data["track-count"]}</p>
-        <p>🏷️ Sello: {data["label-info"]?.map((l) => l.label.name).join(", ")}</p>
+        <div className="album-detail">
+            <div className="album-cover">
+                <img
+                    src={`https://coverartarchive.org/release/${data.id}/front-250`}
+                    alt={data.title}
+                    onError={(e) => (e.currentTarget.src = "/placeholder.webp")}
+                />
+            </div>
+            <div className="album-info">
+                <h2>{data.title}</h2>
+                <p>👤 Artista: {data["artist-credit"][0]?.name}</p>
+                <p>📅 Lanzamiento: {data.date}</p>
+                <p>🌍 País: {data.country}</p>
+                <p>💽 Formato: {data.media?.map((m) => m.format).join(", ")}</p>
+                <p>🎶 Canciones: {data["track-count"]}</p>
+                <p>🏷️ Sello: {data["label-info"]?.map((l) => l.label.name).join(", ")}</p>
+            </div>
         </div>
     );
 }

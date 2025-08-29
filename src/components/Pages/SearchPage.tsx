@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import SearchBar from "../SearchBar";
-import "./style";
-
+import "./css/SearchPage.css";
 
 interface ArtistCredit {
     name: string;
@@ -109,9 +108,7 @@ function SearchPage() {
                         <img
                             className="release-cover"
                             alt={r.title}
-                            onError={(e) =>
-                                (e.currentTarget.src = "/placeholder.jpg")
-                            }
+                            onError={(e) =>(e.currentTarget.src = "/placeholder.webp")}
                             src={`https://coverartarchive.org/release/${r.id}/front-250`}
                         />
                         <div className="release-info">

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./css/style.css";
 
 interface Props {
     onSearch: (artist: string) => void;
@@ -15,7 +16,7 @@ function SearchBar({ onSearch }: Props) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="search-bar" onSubmit={handleSubmit}>
             <input
                 type="text"
                 value={artist}
